@@ -45,15 +45,16 @@ const distance = (s1, s2) => {
 };
 
 let proteinCalc = (s1, s2) => {
-    s1 = s1.trim(); s2 = s2.trim();
+    s1 = s1.trim();
+    s2 = s2.trim();
     const mx = distance(s1, s2);
     console.log(mx);
     let output1 = '';
-    let output2= '';
+    let output2 = '';
     let i = s1.length;
     let j = s2.length;
 
-      while(i !== 0 && j!== 0) {
+    while (i !== 0 && j !== 0) {
         //console.log(`[${i}][${j}]ВЫЧИСЛЯЮ ПРОТЕИНЫ . . . ${output1} /// ${output2}`);
         let minimum = Math.min.apply(null, [
             mx[i - 1][j - 1],
@@ -61,19 +62,19 @@ let proteinCalc = (s1, s2) => {
             mx[i - 1][j],
         ]);
 
-        if (mx[i][j] === mx[i - 1][j - 1] && mx[i - 1][j - 1] === minimum){
+        if (mx[i][j] === mx[i - 1][j - 1] && mx[i - 1][j - 1] === minimum) {
             //console.log(mx[i][j], mx[i - 1][j - 1], minimum);
             output2 = s2[j - 1] + output2;
             output1 = s1[i - 1] + output1;
             i--;
             j--;
         } else {
-            if (mx[i][j - 1] === minimum){
+            if (mx[i][j - 1] === minimum) {
                 //console.log('i j-1',mx[i][j - 1], minimum);
                 output1 = '—' + output1;
                 output2 = s2[j - 1] + output2;
                 j--;
-            } else if (mx[i - 1][j] === minimum){
+            } else if (mx[i - 1][j] === minimum) {
                 //console.log('i-1 j',mx[i - 1][j], minimum);
                 output1 = s1[i - 1] + output1;
                 output2 = '—' + output2;
@@ -88,7 +89,7 @@ let proteinCalc = (s1, s2) => {
     }
 
     return [mx[s1.length][s2.length], output1, output2];
-}
+};
 
 //console.log(proteinCalc('PRETTY', 'PRTTEIN'));
 

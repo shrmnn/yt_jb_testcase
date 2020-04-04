@@ -1,31 +1,44 @@
+::selection {
+    color: ghostwhite;
+    background: #fb307e;
+}
+
+a {
+    color: #fb307e;
+    outline: none;
+    text-decoration: none;
+}
 .App {
+    background-color: #282c34;
   text-align: center;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .App-logo {
-  height: 40vmin;
+    height: 30vmin;
   pointer-events: none;
+    user-select: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+      animation: App-logo-spin infinite 30s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
   display: flex;
+    margin: 50px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+    color: ghostwhite;
 }
 
 @keyframes App-logo-spin {
@@ -33,6 +46,77 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+      transform: rotate(-360deg);
   }
+}
+
+form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+*:focus {
+    outline: none;
+}
+
+input[type=text] {
+    background: transparent !important;
+    border: none;
+    border-bottom: 4px solid #fb307e;
+    box-sizing: border-box;
+    color: ghostwhite !important;
+    font-size: inherit;
+    width: 20vh;
+}
+
+input[type=text]:focus {
+    background: transparent;
+}
+
+input[type=text]:-webkit-autofill,
+input[type=text]:-webkit-autofill:hover,
+input[type=text]:-webkit-autofill:focus,
+input[type=text]:-webkit-autofill:active {
+    background: transparent;
+    -webkit-transition-delay: 99999s;
+}
+
+input[type=submit] {
+    padding: 5px;
+    background: transparent;
+    border: 1px solid #fb307e;
+    color: ghostwhite;
+    font-size: inherit;
+}
+
+input[type=submit]:hover {
+    background: #fb307e;
+}
+
+.Content {
+    background-color: #282c34;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: ghostwhite;
+}
+
+.Footer {
+    background: #23272f;
+    color: ghostwhite;
+    flex-shrink: 0;
+    padding: 20px;
+}
+
+.Result {
+    max-width: 100%;
+    overflow-wrap: normal;
+    word-wrap: break-word;
+    display: inline;
 }
